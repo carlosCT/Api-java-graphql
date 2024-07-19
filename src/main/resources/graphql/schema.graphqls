@@ -1,0 +1,46 @@
+# Query - Me sirve solo para hacer consultas
+type Query {
+    #Clients
+    findAllClient: [Client],
+    findClientById(clientId: String) : Client,
+    findByName(name: String) : Client,
+    findByClientId(clientId: String) : Client
+
+}
+
+
+type Client {
+    id: ID,
+
+      address: String,
+      blocked:String,
+      cellPhone: String,
+      channel:String
+      clientId:String,
+      country:String,
+      customerSchema: Int,
+      distrChan: String,
+      division: String,
+      fiscalCode1: String,
+      fiscalCode2: String,
+      frequency: Boolean,
+      frequencyDays: String,
+      idPortfolio: String,
+      immediateDelivery: Boolean,
+      industryCode: String,
+      industryCode1: String,
+      isEnrollment: Boolean,
+      name: String,
+      name2: String,
+      office: String,
+      paymentCondition: String,
+      paymentMethods: [Method!]
+}
+
+
+type Method {
+    typeCredit: String,
+    creditLimit: String,
+    creditUsed: Int,
+    amountAvailable: Int
+}
